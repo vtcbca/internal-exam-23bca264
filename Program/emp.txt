@@ -1,0 +1,25 @@
+.open employee.db
+sqlite> create table emp(eid primary key,ename,dept,basic,branch);
+sqlite> insert into emp values(01,'Rohit','IT',45000,'Surat');
+sqlite> insert into emp values(02,'Virat','ACCOUNT',40000,'Baroda'),
+   ...> (03,'SHreayanka','HR',60000,'Surat'),
+   ...> (04,'Jassi','Inventory',50000,'Bardoli'),
+   ...> (05,'Smriti','IT',40000,'Surat');
+sqlite> select * from emp;
+1|Rohit|IT|45000|Surat
+2|Virat|ACCOUNT|40000|Baroda
+3|SHreayanka|HR|60000|Surat
+4|Jassi|Inventory|50000|Bardoli
+5|Smriti|IT|40000|Surat
+sqlite> .mode column
+sqlite> select * from emp;
+eid  ename       dept       basic  branch
+---  ----------  ---------  -----  -------
+1    Rohit       IT         45000  Surat
+2    Virat       ACCOUNT    40000  Baroda
+3    SHreayanka  HR         60000  Surat
+4    Jassi       Inventory  50000  Bardoli
+5    Smriti      IT         40000  Surat
+sqlite> .mode csv
+sqlite> .output emo.csv
+sqlite> select * from emp;
